@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('name', 20);
             $table->string('lastname', 20);
             $table->enum('type', ['Scrum Master', 'Project Owner','Developer'])->default('Developer');
-            $table->string('email', 20)->unique();
-            $table->string('password', 20);
+            $table->string('email')->unique();
+            $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
