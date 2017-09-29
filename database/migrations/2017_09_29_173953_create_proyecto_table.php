@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddProyectoTable extends Migration
+class CreateProyectoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,10 +20,7 @@ class AddProyectoTable extends Migration
             $table->dateTime('fecha_fin');
             $table->string('description', 100);
             $table->enum('estado', ['En proceso', 'En revisión','Aprobado','Falta Información','Incompleto','Detenido','Terminado'])->default('En proceso');
-            $table->integer('id_cliente')->unsigned();
-            $table->integer('id_equipo')->unsigned();
-            $table->foreign('id_cliente')->references('id')->on('cliente')->onDelete('cascade');
-            $table->foreign('id_equipo')->references('id')->on('equipo')->onDelete('cascade');
+            $table->string('comentarios', 60);
             $table->timestamps();
         });
     }

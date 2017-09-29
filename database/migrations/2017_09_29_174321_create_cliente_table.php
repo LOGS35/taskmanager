@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddClienteTable extends Migration
+class CreateClienteTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,6 +15,9 @@ class AddClienteTable extends Migration
     {
         Schema::create('cliente', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name', 20);
+            $table->string('email', 20)->unique();
+            $table->string('telefono', 10)->unique();
             $table->timestamps();
         });
     }

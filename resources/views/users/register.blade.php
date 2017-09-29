@@ -64,6 +64,15 @@
             </div>
           </div>
           <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-12">
+                {!! Form::label('type', 'Tipo') !!}
+               {!! Form::select('type', ['' => 'Seleccione', 'Scrum Master' => 'Scrum Master', 'Project Owner' => 'Project Owner', 'Developer' => 'Developer'], null, ['class' => 'form-control']) !!}
+              </div>
+              
+            </div>
+          </div>
+          <div class="form-group">
               {!! Form::submit('Registrar', ['class' => 'btn btn-primary']) !!}
           </div>
           {!! Form::close() !!}
